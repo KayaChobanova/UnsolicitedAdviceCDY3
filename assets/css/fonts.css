@@ -1,0 +1,16 @@
+
+@font-face {
+  font-family: "Necto";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  src: url("../fonts/NectoMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Display";
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+  src: url("../fonts/DMSerifDisplay-Italic.woff2") format("woff2");
+}

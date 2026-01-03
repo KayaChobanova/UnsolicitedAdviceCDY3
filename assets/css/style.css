@@ -1,0 +1,357 @@
+body {
+    font-family: 'necto';
+    background-color: #fafafa
+}
+
+.intro {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    padding-top: 10%;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
+
+.intro p {
+    font-size: 0.95rem;
+    margin-bottom: 5%;
+    letter-spacing: 0.5px;
+    color: #666;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    max-width: 1600px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.advice-box {
+    padding: 12%;
+    position: relative;
+    background-color: #fafafa;
+    transition: all 0.8s;
+    border: 1px solid #e0e0e0;
+}
+
+.box-number {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-size: 0.65rem;
+    color: #999;
+    letter-spacing: 0.5px;
+    z-index: 10;
+}
+
+.interactive .box-number {
+    color: #666;
+}
+
+/* MAKE YOUR OWN */
+.interactive {
+    background-color: #2a2a2a;
+    padding: 3rem;
+}
+
+.interactive .content {
+    font-family: 'necto';
+    font-size: 0.9rem;
+    margin-top: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.interactive select {
+    font-family: 'necto';
+    color: #bababa;
+    border: none;
+    border-bottom: 1px solid #666;
+    background-color: transparent;
+    padding: 2px 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    appearance: none;
+    max-width: 100%;
+}
+
+.interactive select:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.interactive select:focus {
+    outline: none;
+    border-bottom: 2px solid #fff;
+    background-color: transparent;
+}
+
+.interactive .meta {
+    color: #888;
+    margin-top: 1.5rem;
+}
+
+.interactive .follow-status {
+    color: #aaa;
+    margin-top: 1.25rem;
+}
+
+.interactive .truth {
+    color: #818181;
+    border-top: 1px solid #444;
+    font-family: 'necto';
+    font-size: 0.7rem;
+    margin-top: 12%;
+    padding-top: 10%;
+    display: none
+}
+
+/* Real advice */
+.content {
+    font-size: 0.9rem;
+    margin-top: 12%;
+    line-height: 1.5;
+}
+
+.meta {
+    font-size: 0.55rem;
+    color: #8b8b8b;
+    margin-top: 12%;
+    margin-bottom: 19%;
+    text-transform: uppercase;
+    line-height: 170%;
+    letter-spacing: 2px;
+}
+
+
+
+.advice-box.filled .response {
+    display: block;
+}
+
+.follow-status {
+    display: flex;
+    gap: 18%;
+    margin-top: 8%;
+    font-size: 0.6rem;
+}
+
+.follow-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.dot.yes {
+    background-color: #9e1717;
+}
+
+.dot.no {
+    background-color: #ddd;
+}
+
+/* HOVERABLE */
+.hoverable {
+    cursor: pointer;
+    position: relative;
+}
+
+
+
+/* OVERLAY TEXT */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(250, 250, 250, 0.585);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 5%;
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.overlay-text {
+    font-family: 'Display';
+    font-size: 4.5vw;
+    color: #000;
+    text-align: center;
+    max-width: 78%;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hoverable:hover .overlay {
+    display: flex;
+    opacity: 1;
+    pointer-events: none;
+}
+
+/*  Random shuffle */
+
+/* Full width */
+.advice-box:nth-child(1) {
+    grid-column: 1 / -1;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: center;
+    padding: 5% 10%;
+    font-size: 140%;
+    border: 1px solid #e0e0e0;
+}
+
+.advice-box:nth-child(1) .box-number {
+    color: #888;
+}
+
+.advice-box:nth-child(1) select {
+    color: #fff;
+    border-bottom-color: #666;
+}
+
+.advice-box:nth-child(1) select:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-bottom-color: #fff;
+}
+
+.advice-box:nth-child(1) .truth {
+    color: #bbb;
+    border-top-color: #444;
+}
+
+.advice-box:nth-child(16) {
+    grid-column: 1 / -1;
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    text-align: center;
+    padding: 4% 10%;
+}
+
+/* Large 2x2 blocks */
+.advice-box:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 115%;
+}
+
+.advice-box:nth-child(12) {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 115%;
+}
+
+.advice-box:nth-child(23) {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 115%;
+}
+
+/* Wide 2-column blocks */
+.advice-box:nth-child(3) {
+    grid-column: span 2;
+}
+
+.advice-box:nth-child(9) {
+    grid-column: span 2;
+}
+
+.advice-box:nth-child(14) {
+    grid-column: span 2;
+}
+
+.advice-box:nth-child(20) {
+    grid-column: span 2;
+}
+
+.advice-box:nth-child(27) {
+    grid-column: span 2;
+}
+
+/* Tall 2-row blocks */
+.advice-box:nth-child(7) {
+    grid-row: span 2;
+}
+
+.advice-box:nth-child(11) {
+    grid-row: span 2;
+}
+
+.advice-box:nth-child(18) {
+    grid-row: span 2;
+}
+
+.advice-box:nth-child(25) {
+    grid-row: span 2;
+}
+
+.advice-box:nth-child(30) {
+    grid-row: span 2;
+}
+
+/* Wide 3-column blocks */
+.advice-box:nth-child(21) {
+    grid-column: span 3;
+    font-size: 110%;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .advice-box:nth-child(1),
+    .advice-box:nth-child(16) {
+        grid-column: 1 / -1;
+    }
+    
+    .advice-box:nth-child(21) {
+        grid-column: span 2;
+    }
+    
+    .overlay-text {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .advice-box:nth-child(1),
+    .advice-box:nth-child(3),
+    .advice-box:nth-child(5),
+    .advice-box:nth-child(9),
+    .advice-box:nth-child(12),
+    .advice-box:nth-child(14),
+    .advice-box:nth-child(16),
+    .advice-box:nth-child(20),
+    .advice-box:nth-child(21),
+    .advice-box:nth-child(23),
+    .advice-box:nth-child(27) {
+        grid-column: span 2;
+    }
+    
+    .overlay-text {
+        font-size: 6vw;
+    }
+}
